@@ -1,26 +1,20 @@
-import matplotlib.pyplot as plt
+def factorial(num):
 
-# Define the sections and their frequencies
-sections = [
-    "Introduction to Anthropology",
-    "Sub-fields of Anthropology",
-    "Human Culture",
-    "Cultural Unity and Variations",
-    "Evaluating Cultural Differences",
-    "Culture Change",
-    "Marriage, Family, and Kinship"
-]
-frequencies = [6, 4, 5, 3, 3, 4, 4]
+    sum = 1
+    if num == 0:
+        return 1
+    while num > 1:
+        sum *= num
+        num -= 1
+    return sum
 
-# Create the bar chart
-plt.figure(figsize=(10, 6))
-plt.bar(sections, frequencies, color='skyblue')
-plt.xlabel('Sections')
-plt.ylabel('Frequency')
-plt.title('Distribution of Topics in Anthropology Document')
-plt.xticks(rotation=45, ha='right')
-plt.tight_layout()
 
-# Show the plot
-plt.show()
+def expo(num, power):
+    sum = 0
+    while power > -1:
+        sum += num ** power / factorial(power)
+        power -= 1
+    return sum
 
+
+print(expo(4, 20))  
